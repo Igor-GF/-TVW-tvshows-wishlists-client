@@ -1,13 +1,76 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.tvshow-card {
+  background-color: rgb(70, 90, 140);
+  margin: 1rem;
+  width: 200px;
+  padding: 0;
+  border-radius: 4px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  position: relative;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.tvshow-card img {
+  width: 100%;
+  height: 300px;
+}
+
+.tvshow-card div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  padding: 3px;
+  color: white;
+  margin: 0px;
+}
+
+.tvshow-card h6 {
+  padding: 0;
+  color: white;
+  margin: 0px;
+}
+
+.tvshow-card h5 {
+  padding: 0;
+  color: rgb(70, 90, 140);
+  margin: 0px;
+}
+
+.movie-details-link {
+  background-color: rgba(255, 255, 255, 0.9);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.tvshow-card:hover .movie-details-link {
+  transform: translateY(0%);
+}
+
+.navbar {
+  background-color: rgb(70, 90, 140);
+  display: flex;
+  justify-content:space-evenly;
+}
+
+.btn {
+  background-color: rgb(70, 90, 140);
+  color: white;
+}
+
+.btn:hover {
+  background-color: #fcbe00;
+}
+
+.searchbar-container {
+  width: 40%;
+}
+
+.searchbar {
+  width: 100%;
+  border-radius: 5px;
+  padding: 1px 7px 2px 7px;
 }
