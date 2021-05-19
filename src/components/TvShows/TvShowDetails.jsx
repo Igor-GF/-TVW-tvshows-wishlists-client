@@ -36,22 +36,29 @@ const TvShowDetails = ({ match }) => {
   }
 
   return (
-    <div>
-      <div className="container-fluid">
-        <figure>
-          <img src={showDetails.image_thumbnail_path} alt='cover'/>
-        </figure>
-        <article>
-          <h1>{showDetails.name}</h1>      
-          <p>Description: {showDetails.description}</p>
-          <p>Network: {showDetails.network}</p>
-          <p>Start date: {showDetails.start_date}</p>
-          <p>Status: {showDetails.status}</p>
-        </article>
-        <div>
-          <button className="btn" onClick={addShowToWishlistHandler}>wishlist</button>
-          <button className="btn" onClick={addShowToWatchedtHandler}>watched</button>
+    <div className="container-fluid">
+      <div className="movie-main-container">
+        <div className="movie-left-container">
+          <figure>
+            <img src={showDetails.image_thumbnail_path} alt='cover'/>
+          </figure>
+
+          <div className="movie-left-btn-container">
+            <button className="btn" onClick={addShowToWishlistHandler}>wishlist</button>
+            <button className="btn" onClick={addShowToWatchedtHandler}>watched</button>
+          </div>
+          <div className='movie-bottom-info'>
+            <p>Network: {showDetails.network}</p>
+            <p>Start date: {showDetails.start_date}</p>
+            <p>Status: {showDetails.status}</p>
+          </div>
         </div>
+        
+        <article className="movie-right-container">
+          <h2>{showDetails.name}</h2>      
+          <p>Description: {showDetails.description}</p>
+        </article>
+        
       </div>
     </div>
   )

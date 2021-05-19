@@ -1,6 +1,7 @@
 # TVW - TV shows wishlists app
 
-https://
+https://github.com/Igor-GF/-TVW-tvshows-wishlists-client
+
 Ironhack last project (Module 3)
 
 # What the app is about

@@ -5,20 +5,33 @@ import { Link } from 'react-router-dom'
 const PopularShows = () => {
 
   const [popularShows, setPopularShows] = useState([]);
+  const [pageState, setPageState] = useState(1);
 
   useEffect(() => {
     axios
-      .get("https://www.episodate.com/api/most-popular?page=1")
+      .get(`https://www.episodate.com/api/most-popular?page=${pageState}`)
       .then((response) => {
         setPopularShows(response.data.tv_shows);
       })
       .catch((err) => console.log(err));
   }, [popularShows]);
 
+  const setPageBackHandler = () => setPageState(pageState - 1);
+  const setPagenNextHandler = () => setPageState(pageState + 1);
+
   return (
     <div className="container-fluid">
-      <h3>Component Most popular shows</h3>
-      <div className="row">
+
+      <div className="sub-title-container">
+        <h4>MOST POPULAR SHOWS</h4>
+        <div className="nav-btn-container">
+          {pageState > 1 && <button className="btn" onClick={setPageBackHandler}>BACK</button>}
+          <span>  {pageState}  </span>
+          {pageState < 927 && <button className="btn" onClick={setPagenNextHandler}>NEXT</button>}
+        </div>        
+      </div>
+      
+      <div className="row most-popular-container">
         {
           popularShows &&
           popularShows.map((showItem) => {

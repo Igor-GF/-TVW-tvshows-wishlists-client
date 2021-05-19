@@ -1,3 +1,32 @@
+.container-fluid {
+  background-color: rgb(215, 215, 215);
+}
+
+.sub-title-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(70, 90, 140);
+  width: 100%;
+  border: 0;
+  padding: 10px 5px 0px 5px;
+}
+
+.nav-btn-container {
+  text-align: right;
+}
+
+.sub-title-container button {
+  background-color: rgb(215, 215, 215);
+  color: rgb(70, 90, 140);
+}
+
+.sub-title-container button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 0;
+}
+
 .tvshow-card {
   background-color: rgb(70, 90, 140);
   margin: 1rem;
@@ -51,9 +80,11 @@
 }
 
 .navbar {
+  width: 100%;
   background-color: rgb(70, 90, 140);
   display: flex;
   justify-content:space-evenly;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
 }
 
 .btn {
@@ -73,4 +104,55 @@
   width: 100%;
   border-radius: 5px;
   padding: 1px 7px 2px 7px;
+}
+
+.movie-main-container {
+  display: flex;
+  margin: 10px 0px;
+  background-color: rgb(70, 90, 140);
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.movie-right-container {
+  color: white;
+  padding: 0px 13px;
+  text-align: left;
+}
+
+.movie-right-container h2 {
+  color: #fcbe00;
+}
+
+.movie-left-container {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  width: 200px;
+}
+
+.movie-bottom-info {
+  padding: 12px;
+  margin: 0px;
+  font-weight: 500;
+  color: rgb(70, 90, 140);
+}
+
+.movie-bottom-info p {
+  margin: 0px;
+}
+
+.movie-left-container figure {
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+  width: 200px;
+}
+
+.movie-left-container img {
+  width: 100%;
+}
+
+.movie-left-btn-container {
+  display: flex;
+  justify-content:space-evenly;
 }
