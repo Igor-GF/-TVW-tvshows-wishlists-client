@@ -1,11 +1,9 @@
-import React, { useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
-import AuthService from '../../services/AuthService';
+import React from 'react';
 
 const ProfileEdit = () => {
   return (
     <div>
-      
+      <div>Hello ... </div>
     </div>
   )
 }

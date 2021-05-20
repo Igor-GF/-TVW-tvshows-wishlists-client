@@ -69,8 +69,3 @@ const Profile = () => {
 }
 
 export default Profile;
-
-{/* <div className="movie-left-btn-container">
-            <button className="btn" onClick={addShowToWishlistHandler}>wishlist</button>
-            <button className="btn" onClick={addShowToWatchedtHandler}>watched</button>
-          </div> */}
