@@ -14,7 +14,7 @@ const PopularShows = () => {
         setPopularShows(response.data.tv_shows);
       })
       .catch((err) => console.log(err));
-  }, [popularShows]);
+  }, [pageState]);
 
   const setPageBackHandler = () => setPageState(pageState - 1);
   const setPagenNextHandler = () => setPageState(pageState + 1);

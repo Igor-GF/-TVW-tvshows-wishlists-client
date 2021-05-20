@@ -5,8 +5,12 @@ const AllWishlists = ({userData}) => {
 
   return (
     <div>
-      <div>
+      <div className="wishlists-container">
         <p>Wishlists</p>
+        <Link to="create-list">
+          <button className="btn">Create</button>
+        </Link>
+        
       </div>
       <ul>
         { 

@@ -23,6 +23,12 @@ class AuthService {
   profile = () =>
     this.service.get("/profile").then((response) => response.data);
 
+  profileEdit = () =>
+    this.service.put("/profile/edit").then((response) => response.data);
+
+  profileDelete = () =>
+    this.service.delete("/profile/delete").then((response) => response.data);
+
   loggedin = () =>
   this.service
     .get("/loggedin").then((response) => response.data);

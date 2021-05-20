@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'
 import AllWishlists from '../components/Wishlists/AllWishlists';
 import AuthService from '../services/AuthService';
 
@@ -21,23 +22,27 @@ const Profile = () => {
   useEffect((apiCallUser), []);
 
   return (
-    <div>
-      <div className="container">
-        <section>
-          <img src={userState.photoUrl} alt="profile-pic"/>
-          <h3>{userState.username}</h3>
+    <div className="container-fluid">
+      <div className="movie-main-container">
+        <div className="movie-left-container">
+          <figure>
+            <img src={userState.photoUrl} alt="profile-pic"/>
+          </figure>
 
+          <div className="movie-left-btn-container">
+            <Link to="/profile/edit">
+              <button className="btn">edit</button>
+            </Link>
+            <Link to="/profile/delete">
+              <button className="btn">delete</button>
+            </Link>
+          </div>
+        </div>
+
+        <article className="movie-right-container">
+          <h2>{userState.username}</h2>
           {userState.wishLists && <AllWishlists userData={userState}/>}
-
-          {console.log(userState)}
-        </section>
-{/* 
-        <div>
-          <h3>My wishlists</h3><Link to="/create-list">new list</Link>
-          <ul>
-            <AllWishlists userData={{...userState}}/>
-          </ul>          
-        </div> */}
+        </article>
 
         {/* <div>
           <h3>{userState.watchedShows.length} Watched shows</h3>
@@ -64,3 +69,8 @@ const Profile = () => {
 }
 
 export default Profile;
+
+{/* <div className="movie-left-btn-container">
+            <button className="btn" onClick={addShowToWishlistHandler}>wishlist</button>
+            <button className="btn" onClick={addShowToWatchedtHandler}>watched</button>
+          </div> */}

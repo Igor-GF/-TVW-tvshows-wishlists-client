@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import ListsService from '../../services/ListsService';
+import { useHistory } from 'react-router-dom';
 
 const initialState = {
   listName: '',
@@ -10,6 +11,7 @@ const initialState = {
 const AddWishList = () => {
 
   const [wishListState, setWishListState] = useState(initialState);
+  const history = useHistory();
 
   const inputChangeHandler = (event) => {
     const { name, value } = event.target;
@@ -25,8 +27,8 @@ const AddWishList = () => {
     service
       .createList(wishListState)
       .then((response) => {
-        console.log(response);
         setWishListState(initialState);
+        history.push('/profile');
       })
       .catch((err) => console.error(err));
   }

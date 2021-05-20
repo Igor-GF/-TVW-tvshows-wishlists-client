@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import AuthService from '../../services/AuthService';
 import Searchbar from '../SearchBar/Searchbar';
@@ -12,7 +11,7 @@ const Navbar = ({ userState }) => {
     service
      .logout()
      .then((response) => {
-        console.log(response);
+        console.log(response.message);
      })
      history.push('/');
   }

@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import ListsServices from '../services/ListsService';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
 const Wishlist = ({ match }) => {
 
   const [wishListState, setWishListState] = useState(null);
   const { listId } = match.params;
 
-  const service = new ListsServices();
-
   const toGetWishList = () => {
+
+    const service = new ListsServices();
 
     service
      .getWishList(listId)
@@ -19,7 +19,6 @@ const Wishlist = ({ match }) => {
         setWishListState(resWishlist);
      })
      .catch(err => console.error(err))
-  
   }
 
   useEffect(toGetWishList, [listId]);

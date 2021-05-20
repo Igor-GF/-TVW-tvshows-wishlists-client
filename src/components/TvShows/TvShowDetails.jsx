@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import ListsService from '../../services/ListsService';
 import axios from 'axios';
 
@@ -7,6 +8,7 @@ const TvShowDetails = ({ match }) => {
   const [showDetails, setShowDetails] = useState({});
   // const [msgState, setMsgState] = useState(null);
   const service = new ListsService();
+  const history = useHistory();
 
   const apiCall = () => {
     const { showId } = match.params;
@@ -26,6 +28,8 @@ const TvShowDetails = ({ match }) => {
       .addToWishlist(showDetails)
       .then()
       .catch((error) => console.error(error));
+
+      history.push('/wishlists/:listId');
   }
 
   const addShowToWatchedtHandler = () => {
@@ -33,6 +37,12 @@ const TvShowDetails = ({ match }) => {
       .addToWatchedlist(showDetails)
       .then()
       .catch((error) => console.error(error));
+    
+      history.push('/profile');
+  }
+
+  const goBackHandler = () => {
+    history.go(-1);
   }
 
   return (
@@ -57,8 +67,10 @@ const TvShowDetails = ({ match }) => {
         <article className="movie-right-container">
           <h2>{showDetails.name}</h2>      
           <p>Description: {showDetails.description}</p>
-        </article>
-        
+        </article>        
+      </div>
+      <div className="nav-btn-container">
+        <button className="btn" onClick={goBackHandler}>BACK</button>
       </div>
     </div>
   )

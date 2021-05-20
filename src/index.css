@@ -1,5 +1,5 @@
-.container-fluid {
-  background-color: rgb(215, 215, 215);
+#root {
+  background-color: rgb(235, 235, 235);
 }
 
 .sub-title-container {
@@ -17,14 +17,13 @@
   text-align: right;
 }
 
-.sub-title-container button {
+.nav-btn-container button {
   background-color: rgb(215, 215, 215);
   color: rgb(70, 90, 140);
 }
 
-.sub-title-container button:hover {
+.nav-btn-container button:hover {
   background-color: rgba(255, 255, 255, 0.3);
-  border: 0;
 }
 
 .tvshow-card {
@@ -155,4 +154,35 @@
 .movie-left-btn-container {
   display: flex;
   justify-content:space-evenly;
+}
+
+.wishlists-container {
+
+}
+
+.alert-main-container {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+  align-items: center;
+  margin: 10px 0px;
+  background-color: #fcbe00;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.alert-main-container p {
+  margin: 0;
+  font-weight: 500;
+}
+
+.alert-btn-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 20%;
+}
+
+.alert-btn-container .btn:hover {
+  background-color: rgb(255, 255, 255);
 }

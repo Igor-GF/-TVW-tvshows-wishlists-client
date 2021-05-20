@@ -11,6 +11,8 @@ import CreateList from './pages/CreateList';
 import Wishlist from './pages/Wishlist';
 import AuthService from './services/AuthService';
 import Navbar from './components/Navbar/Navbar';
+import ProfileDelete from './pages/Auth/ProfileDelete';
+import ProfileEdit from './pages/Auth/ProfileEdit';
 
 function App() {
 
@@ -23,7 +25,7 @@ function App() {
     service
       .loggedin()
       .then((resUserLogged) => {
-        resUserLogged && setUserState(true);
+        resUserLogged.username ? setUserState(true) : setUserState(false);
       })
       .catch(err => console.error(err));
   }
@@ -35,12 +37,14 @@ function App() {
       <Navbar userState={userState} />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/profile" component={Profile} />
+        <Route exact path="/profile" component={Profile} />
+        <Route path="/profile/delete" component={ProfileDelete} />
+        <Route path="/profile/edit" component={ProfileEdit} />
         <Route path="/create-list" component={CreateList} />
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
         <Route path="/show-details/:showId" component={TvShowDetails} />
-        <Route path="/wishlists/:listId" component={Wishlist} />
+        <Route path="/wishlists/:listId" component={Wishlist} />        
       </Switch>
     </div>
   );
