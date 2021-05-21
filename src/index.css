@@ -2,6 +2,11 @@
   background-color: rgb(235, 235, 235);
 }
 
+.container-fluid {
+  display: flex;
+  justify-content: center;
+}
+
 .sub-title-container {
   display: flex;
   flex-direction: row;
@@ -26,6 +31,12 @@
   background-color: rgba(255, 255, 255, 0.3);
 }
 
+.most-popular-container {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+  
 .tvshow-card {
   background-color: rgb(70, 90, 140);
   margin: 1rem;
@@ -100,9 +111,12 @@
 }
 
 .searchbar {
+  background-color: rgb(255, 255, 255);
   width: 100%;
-  border-radius: 5px;
+  border: 0px solid white;
+  border-radius: 7px;
   padding: 1px 7px 2px 7px;
+  
 }
 
 .movie-main-container {
@@ -112,12 +126,14 @@
   border-radius: 10px;
   padding: 10px;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+  width: max-content;
 }
 
 .movie-right-container {
   color: white;
   padding: 0px 13px;
   text-align: left;
+  width: 100%;
 }
 
 .movie-right-container h2 {
@@ -128,6 +144,7 @@
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
   width: 200px;
+  height: max-content;
 }
 
 .movie-bottom-info {
@@ -154,10 +171,56 @@
 .movie-left-btn-container {
   display: flex;
   justify-content:space-evenly;
+  padding-bottom: 12px;
 }
 
-.wishlists-container {
+.user-lists-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
 
+.list-container {
+  background-color: rgb(40, 50, 85);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 10px;
+  padding: 10px;
+  width: max-content;
+  margin: 7px;
+  min-width: 150px;
+}
+
+.list-container .btn {
+  margin: 0px 0px 0px 20px;
+  padding: 2px 6px;
+}
+
+.list-container h5 {
+  margin: 0px;
+}
+
+.list-container ul {
+  list-style-type: none;
+  padding: 0px;
+}
+
+.list-container li {
+  list-style-type: none;
+  padding: 0px;
+}
+
+.list-container p {
+  text-decoration: none;
+}
+
+.list-head-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 5px 10px 5px;
 }
 
 .alert-main-container {
@@ -185,4 +248,17 @@
 
 .alert-btn-container .btn:hover {
   background-color: rgb(255, 255, 255);
+}
+
+@media (min-width: 768px) { 
+  
+  .user-lists-container {
+    flex-direction: row;
+  }
+
+  .movie-main-container {
+    display: flex;
+    justify-content: center;
+    width: 650px;
+  }
 }

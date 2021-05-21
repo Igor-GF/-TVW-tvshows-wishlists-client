@@ -39,30 +39,35 @@ const Profile = () => {
           </div>
         </div>
 
-        <article className="movie-right-container">
+        <div className="movie-right-container">
           <h2>{userState.username}</h2>
-          {userState.wishLists && <AllWishlists userData={userState}/>}
-        </article>
+          <div className="user-lists-container">
+            <article>
+              {userState.wishLists && <AllWishlists userData={userState}/>}
+            </article>
 
-        {/* <div>
-          <h3>{userState.watchedShows.length} Watched shows</h3>
-          <div>
-            <ul>
-              { userState.watchedShows && (
-                  userState.watchedShows.map((itemShow) => {
-                    return (
-                      <Link to={`/show-details/${itemShow._id}`}>
-                        <li key={itemShow._id}>
-                          {itemShow.name}
-                        </li>
-                      </Link>
-                    )
-                  })
-                )
-              }              
-            </ul>
+            <article>
+              <div className="list-container">
+                <div className="list-head-container">
+                  <h6>{userState.watchedShows.length} Watched Shows</h6>
+                </div>
+                <div>
+                  <ul>
+                    { 
+                      userState.watchedShows.map((showItem) => {
+                        return(
+                          <li key={showItem._id}>
+                            <Link to={`/show-details/${showItem._id}`}><p>{showItem.name}</p></Link>
+                          </li>
+                        )
+                      })
+                    }
+                  </ul>
+                </div>
+              </div>
+            </article>
           </div>
-        </div> */}
+        </div>
       </div> 
     </div>
   )
