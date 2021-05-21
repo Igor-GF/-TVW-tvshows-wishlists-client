@@ -21,7 +21,7 @@ const Profile = () => {
 
   useEffect((apiCallUser), []);
 
-  return (
+  return userState && (
     <div className="container-fluid">
       <div className="movie-main-container">
         <div className="movie-left-container">
@@ -46,10 +46,11 @@ const Profile = () => {
               {userState.wishLists && <AllWishlists userData={userState}/>}
             </article>
 
+            { userState.watchedShows && (
             <article>
               <div className="list-container">
                 <div className="list-head-container">
-                  <h6>{userState.watchedShows.length} Watched Shows</h6>
+                     <h6>{userState.watchedShows.length} Watched Shows</h6>
                 </div>
                 <div>
                   <ul>
@@ -66,6 +67,7 @@ const Profile = () => {
                 </div>
               </div>
             </article>
+            )}
           </div>
         </div>
       </div> 

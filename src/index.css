@@ -112,6 +112,8 @@
 
 .searchbar {
   background-color: rgb(255, 255, 255);
+  margin: 5px;
+  border: 1px solid #fcbe00;
   width: 100%;
   border: 0px solid white;
   border-radius: 7px;

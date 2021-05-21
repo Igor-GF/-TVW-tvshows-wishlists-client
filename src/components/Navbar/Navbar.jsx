@@ -21,7 +21,6 @@ const Navbar = ({ userState }) => {
       <Link to="/">
         <img src="https://res.cloudinary.com/drgrtgd5l/image/upload/v1621374872/server-tv-shows/TVW-logo-h60_vyg1e5.png" alt="logo-pic" />
       </Link>
-      <Searchbar />
       {
         userState 
           ? ( <div>
